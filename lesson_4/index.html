@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <p class="myClass" id="onlyP">P1</p>
+    <p>P2</p>
+    <p>P3</p>
+    <h1 class="myClass">H1</h1>
+    <div class="myClass">Div</div>
+    <button id="myButton">Push me</button> -->
+    <div id="chat">
+        <input type="text" id="message">
+        <br>
+        <button id="send">Send</button>
+    </div>
+</body>
+<script src="https://cdn.socket.io/4.4.0/socket.io.min.js " nointegrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
+<script>
+    var socket = io();
+    var button = document.querySelector('#send')
+    button.addEventListener('click', ()=>{
+        var message = document.querySelector('#message')
+        if(message.value != "")
+        socket.emit('send message', message.value)
+    })
+    
+</script>
+    <!-- <script src="script.js"></script>
+    <script src="p5.js"></script> -->
+</html>
